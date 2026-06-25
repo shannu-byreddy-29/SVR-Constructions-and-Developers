@@ -19,10 +19,14 @@ import AdminLogin from './pages/AdminLogin';
 import ClientDashboard from './pages/ClientDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 
+const basename = window.location.pathname.startsWith('/SVR-Constructions-and-Developers')
+  ? '/SVR-Constructions-and-Developers'
+  : '/';
+
 export default function App() {
   return (
     <AuthProvider>
-      <Router>
+      <Router basename={basename}>
         <Layout>
           <Routes>
             {/* Public website routes */}
